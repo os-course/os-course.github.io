@@ -4,7 +4,7 @@
  */
 .site-header {
   border-top: 0px solid #424242;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid 500516;
   min-height: 56px;
   background: #e7e7e7;
   position: relative; }
@@ -67,7 +67,7 @@
   letter-spacing: 0;
   line-height: 1.2em;
   padding: 4px 10px;
-  color: #522d80; }
+  color: #500516; }
 
 .site-nav .sub-menu a:hover {
   color: #e7e7e7; }
@@ -122,8 +122,8 @@
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
-    color: #ffffff;
-    background: #e7e7e7;
+    color: #000000;
+    background: #222222;
     line-height: 1.5; }
     .site-nav .page-link:not(:first-child) {
       margin-left: 20px; }
@@ -132,8 +132,8 @@
       position: absolute;
       top: 9px;
       right: 30px;
-      background-color: #fdfdfd;
-      border: 1px solid #e8e8e8;
+      background-color: #000000;
+      border: 1px solid #222222;
       border-radius: 5px;
       text-align: right; }
       .site-nav .menu-icon {
@@ -194,11 +194,11 @@
   .site-nav .menu li {
     display: block;
     margin: 0;
-    color: #522d80; }
+    color: #500516; }
 
   .site-nav ul.menu a {
     background: #fff;
-    color: #522d80; }
+    color: #500516; }
 
   .site-nav a,
   .site-nav li.current-menu-item > a {
@@ -719,7 +719,7 @@ h1 {
   letter-spacing: -1px;
   line-height: 1;
   font-family: 'Titillium Web', sans-serif;
-  color: #522d80; }
+  color: #500516; }
   @media screen and (max-width: 950px) {
     h1 {
       /*        font-size: 36px; */ } }
