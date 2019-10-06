@@ -841,8 +841,8 @@ ul#archive li span a:hover {
  * Syntax highlighting styles
  */
 .highlight code, .highlight pre, .highlighter-rouge code, .highlighter-rouge pre {
-  color: #fdce93;
-  background-color: #3f3f3f; }
+  color: #fdddca;
+  background-color: #2d2d43; }
 
 .highlight .hll {
   background-color: #222; }
