@@ -446,6 +446,10 @@ a.tosu {
   background-color: #FCF8E5; }
 .responsive-table .table-row-exam {
   background-color: #f2dede; }
+.responsive-table .table-row-quiz {
+  background-color: #bedbbb; }
+.responsive-table .table-row-cls_assignment {
+  background-color: #dbc4cd; }
 .responsive-table .col-1 {
   padding: 2px;
   flex-basis: 10%; }
