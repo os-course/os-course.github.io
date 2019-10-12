@@ -13,18 +13,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="iust os" />
+    <meta name="keywords" content="Operating Systems , Iran university of science and technology , IUST OS , OS , vahid mohsseni , vahid mohseni , mohsen sharifi">
 
-    <title> Operating Systems: Assignments</title>
+    <title>Iran University of Science and Technology:  Operating Systems</title>
     <meta name="description" content="Operating Systems
 ">
 
-    <link rel="stylesheet" href="/iustfall19/_css/main.css">
-    <link rel="canonical" href="http://os-course.github.io/iustfall19/assignments/">
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="canonical" href="http://os-course.github.io/iustfall19/">
     <link rel="alternate" type="application/rss+xml" title="Iran University of Science and Technology" href="http://os-course.github.io/iustfall19/feed.xml" />
     <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
-
-
 
 
 
@@ -38,12 +38,13 @@
 
     <div class="wrapper">
         <table><tr>
-            <td><img width="250" src="/iustfall19/_images/dslab_iust.png" valign="middle"></td>
+            <td><img width="250" src="/static/xv6_log.png" valign="middle"></td>
+            <!--          inserting name on header-->
             <td style="padding-left:10px;"><a style="font-size: 15px;color: #ffffffc7;" class="site-title" href=""></a>
                 <br/>
                 <span style="margin-top: -2px;margin-bottom: -10px;" class="site-title"><b> Operating Systems</b></span>
                 <br/>
-                <span style="color: #000000;font-size: 12px;font-weight: bold;">Fall 2019</span>
+                <span style="color: #000000;font-size: 12px;font-weight: bold;">Xv6</span>
             </td>
         </tr></table>
 
@@ -60,12 +61,6 @@
             <div class="trigger"><h1>Main Navigation</h1>
 
                 <ul class="menu">
-                    <li><a class="page-link" href="/iustfall19/"><i class="fa fa-home fa-lg"></i>Home</a></li>
-                    <li><a class="page-link" href="/iustfall19/schedule/"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
-                    <li><a class="page-link" href="/iustfall19/lectures/"><i class="fas fa-book-reader"></i> Lectures</a></li>
-                    <li><a class="page-link" href="/iustfall19/assignments/"><i class="fas fa-user-graduate"></i> Assignments</a></li>
-                    <li><a class="page-link" href="/iustfall19/final_project/"><i class="fas fa-user-graduate"></i>Final Project</a></li>
-                    <li><a class="page-link" href="/iustfall19/course-materials/"><i class="fas fa-book"></i> Course Materials</a></li>
                 </ul>
 
             </div>
@@ -75,66 +70,75 @@
 
 </header>
 
+
 <div class="page-content">
     <div class="wrapper">
-        <div class="post">
+        <div class="home">
 
-            <header class="post-header">
-                <h1 class="post-title">#1 Assignment - BucketSort</h1>
-<!--                <p class="post-meta">Released on Wednesday 1397/7/4</p>-->
-            </header>
+            <h1> Operating Systems <span style="font-size: 20px;color: #0006;"> XV6 </span></h1>
 
-<!--            <div>-->
-
-<!--                <p style="font-weight: bold">Download-->
-
-<!--                    [<a href="/iustfall19/static_files/assignments/assignment01.pdf">problems</a>]-->
+            <div class="announcement-box" style="margin-top:30px">
+                <h2>Acknowledgement</h2>
 
 
-<!--                    [<a href="/iustfall19/static_files/assignments/assignment01.zip">attachment</a>]-->
+                <ul>
+                    <!--        example of announcements-->
+                    <!--        <li class="no-p-margin">-->
+                    <!--            -->
+                    <!--            <p></p>-->
+
+                    <!--            -->
+                    <!--        </li>-->
+
+                    <li class="no-p-margin">
+                        This project is adapted from MIT's Operating Systems course material. Please refer to this
+                        <a href="https://pdos.csail.mit.edu/6.828/2012/xv6.html" target="_blank">this</a> page for more details.
+                        <p></p>
+
+                    </li>
 
 
-<!--                </p>-->
-
-<!--                <div style="color: gray;">-->
-<!--                    <h3>Late Policy</h3>-->
-<!--                    <ul>-->
-
-<!--                        <li>You have free 8 late days.</li>-->
-
-<!--                        <li>You can use late days for assignments. A late day extends the deadline 24 hours.</li>-->
-
-<!--                        <li>Once you have used all 8 late days, the penalty is 10% for each additional late day.</li>-->
-
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-
+                </ul>
+            </div>
             <br />
+
+            <h2>Description</h2>
+            <p>Xv6 is developed for teaching operating systems course at MIT. It is a re-implementation of
+                Dennis Ritchie's and Ken Thompson's Unix Version 6 (v6). In this page, It will be introduced the simple
+                steps of installing and use of Xv6.</p>
+
+            <br>
+
             <article class="post-content">
-                <p>Implement Bucket Sort algorithm using C programming language. Use <code class="highlighter-rouge">struct</code> to implement linked-list data structure.</p>
+                <h1 id="Description">Description</h1>
+                <p>Write a bash script with 3 functions and it takes your birthdate (day, month, year) and weekday of
+                    birth as inputs which:
+                </p>
+                <ul style="list-style-type: disc;">
+                    <li class="">The first function should validate the weekday of birth is True or not.</li>
+                    <li>The second function should calculate the number of passed days after your birthday if less than 6 months is passed; otherwise, the number of remaining days to your birthday.</li>
+                    <li>The third function should calculate the days' difference between your birthdate and any other date.</li>
+                </ul>
 
                 <h1 id="due-dates">Deadline</h1>
                 <p></p>
                 <ul>
-                    <li><strong>Monday</strong> 7th Oct. 22:00</li>
+                    <li><strong>Sunday</strong> 13th Oct. 22:00</li>
                 </ul>
 
                 <h1 id="setup">RUN</h1>
-                <p>Please make sure that your code is compiled and ran successfully. We will run your code by the following command.</p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gcc [studentNo].c -o out<br>./out</code></pre></div></div>
+                <p>Remember to set execution permission to your script file. You only need to set it once for that file.</p>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x script.sh<br>./script.sh</code></pre></div></div>
                 <p></p>
 
                 <h1 id="submission">Submission</h1>
-                <p>Submit just a C file in LMS. The file should be named as [<code class="highlighter-rouge">9652xxxx.c</code>]. For example <code class="highlighter-rouge">96521234.c</code>.</p>
+                <p>Submit just a bash script file in LMS. The file should be named as [<code class="highlighter-rouge">9652xxxx.sh</code>]. For example <code class="highlighter-rouge">96521234.sh</code>.</p>
 
             </article>
 
         </div>
     </div>
 </div>
-
-
 
 <footer class="site-footer">
 
@@ -168,23 +172,23 @@
 
 
 
-                    <!--  <li>
-                        <a href=" ">
-                          <i class="fab fa-twitter" style="color:gray"></i>
-                        </a>
-                      </li>-->
-
-
-
-
-
-
-
                     <li>
-                        <a href="http://webpages.iust.ac.ir/msharifi//">
-                            <i class="fas fa-globe" style="color:gray"></i> webpages.iust.ac.ir/msharifi/
+                        <a href="mailto:vahidmohsseni@gmail.com">
+                          <i class="fab fa-gmail" style="color:gray"></i>
                         </a>
-                    </li>
+                      </li>
+
+
+
+
+
+
+
+<!--                    <li>-->
+<!--                        <a href="http://webpages.iust.ac.ir/msharifi/" target="_blank">-->
+<!--                            <i class="fas fa-globe" style="color:gray"></i> webpages.iust.ac.ir/msharifi/-->
+<!--                        </a>-->
+<!--                    </li>-->
 
 
 
