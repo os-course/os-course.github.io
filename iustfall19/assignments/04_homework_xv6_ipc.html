@@ -147,7 +147,7 @@
                     This array must be sorted in ascending order according to the memory usage of each process.
                     Structure <code class="highlighter-rouge">proc_info</code> is defined as follow.
                 </p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>struct proc_info {<br>    int pid;<br>    int memsize;            // in bytes<br>};</code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="color-code-key">struct</span> proc_info {<br>    <span class="color-code-key">int</span> pid;<br>    <span class="color-code-key">int</span> memsize;            <span class="color-code-comment">// in bytes</span><br>};</code></pre></div></div>
                 <p>
                     You should write a test program for this system call. The test program may use the
                     <code class="highlighter-rouge">fork()</code> system call to create some processes and
