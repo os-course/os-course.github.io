@@ -122,7 +122,7 @@
                     <a href="https://git.chillinwars.ir/" target="_blank">https://git.chillinwars.ir/</a>
                     and fork the repository
                     <a target="_blank" href="https://git.chillinwars.ir/vahid/xv6-public">https://git.chillinwars.ir/vahid/xv6-public</a>.
-                    Make sure that your forked repository is private. You can make your repository private via <i>Settings → General → Permissions → Project visibility → Private</i>
+                    Make sure that your forked repository is private. You can make your repository <strong>private</strong> via <i>Settings → General → Permissions → Project visibility → Private</i>
                     from the side panel of the repository. Do not forget to push the Save changes button. Add the following accounts as members to your forked repository.
                     You can add members to your repository via <i>Settings → Members</i>.
                 </p>
@@ -142,6 +142,24 @@
 
                 <h1 id="q1">Question 1</h1>
                 <p>Create a branch named <code class="highlighter-rouge"><i>HW2_Q1</i></code> in your repository.
+                    Add a new system call to xv6. The system call you add must return information about processes in
+                    the RUNNING or RUNNABLE state as an array of struct <code class="highlighter-rouge">proc_info</code>.
+                    This array must be sorted in ascending order according to the memory usage of each process.
+                    Structure <code class="highlighter-rouge">proc_info</code> is defined as follow.
+                </p>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>struct proc_info {<br>    int pid;<br>    int memsize;            // in bytes<br>};</code></pre></div></div>
+                <p>
+                    You should write a test program for this system call. The test program may use the
+                    <code class="highlighter-rouge">fork()</code> system call to create some processes and
+                    <code class="highlighter-rouge">malloc()</code> system call to allocate some randomly sized memory
+                    for each process. Try to prove that your system call works as described. Note that:
+                    <ul style="list-style-type: disc; color: #3a3a3a">
+                        <li>The process table is in the proc.c file;</li>
+                        <li> The proc struct is implemented in proc.h file. This struct represents the process control block;</li>
+                        <li> You should add the test file to UPROGS list in Makefile;</li>
+                        <li> If you define a new source file, you should add it to Makefile;</li>
+                        <li> You may need to share the process table so that other source files can access it.</li>
+                    </ul>
                 </p>
 
                 <h1 id="q2">Question 2</h1>
