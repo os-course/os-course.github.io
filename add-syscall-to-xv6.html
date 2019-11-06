@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125957901-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-125957901-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Xv6 Installation"/>
+    <meta name="keywords"
+          content="Operating Systems , Iran university of science and technology , IUST OS , OS , vahid mohsseni , vahid mohseni , mohsen sharifi">
+
+    <title>Iran University of Science and Technology: Operating Systems</title>
+    <meta name="description" content="Operating Systems
+">
+
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="canonical" href="http://os-course.github.io/iustfall19/">
+    <link rel="alternate" type="application/rss+xml" title="Iran University of Science and Technology"
+          href="http://os-course.github.io/iustfall19/feed.xml"/>
+    <link rel='stylesheet' id='open-sans-css'
+          href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4'
+          type='text/css' media='all'/>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet'
+          type='text/css'>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="wrapper">
+        <table>
+            <tr>
+                <td><img width="250" src="/static/xv6_log.png" valign="middle"></td>
+                <!--          inserting name on header-->
+                <td style="padding-left:10px;"><a style="font-size: 15px;color: #ffffffc7;" class="site-title"
+                                                  href=""></a>
+                    <br/>
+                    <span style="margin-top: -2px;margin-bottom: -10px;"
+                          class="site-title"><b> Operating Systems</b></span>
+                    <br/>
+                    <span style="color: #000000;font-size: 12px;font-weight: bold;">Xv6</span>
+                </td>
+            </tr>
+        </table>
+
+        <nav class="site-nav">
+
+            <a href="#" class="menu-icon menu.open">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242"
+                          d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                    <path fill="#424242"
+                          d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                    <path fill="#424242"
+                          d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+            </a>
+
+            <div class="trigger"><h1>Main Navigation</h1>
+
+                <ul class="menu">
+                    <li><a class="page-link" href="#"><i class="fa fa-home fa-lg"></i>Install</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<div class="page-content">
+    <div class="wrapper">
+        <div class="home">
+
+            <h1>Adding New System Calls to xv6</h1>
+
+            <br>
+
+            <article class="post-content">
+                <h1 id="Description">What is a system call?</h1>
+                <p>As you all know, an operating system supports two modes; the kernel mode and the user mode.
+                    When a program in user mode requires access to RAM or a hardware resource, it must ask the kernel to
+                    provide access to that particular resource. This is done via a system call. When a program makes a
+                    system call, the mode is switched from user mode to kernel mode.
+                    There are many system calls in an operating system which executes different types of tasks when they
+                    are called.
+                </p>
+
+                <h1 id="Add">Adding a custom system call in xv6</h1>
+                <p>In order to define your own system call in xv6, you need to make changes to 5 files. Namely, these
+                    files are as follows.</p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                1. syscall.h<br>
+                                2. syscall.c<br>
+                                3. sysproc.c<br>
+                                4. usys.S<br>
+                                5. user.h
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <h1 id="write">Let’s write a system call to return the year Unix version 6 was released.</h1>
+                <p>We would start the procedure by editing syscall.h in which a number is given to every system call.
+                    This file already contains 21 system calls. In order to add the custom system call, the following
+                    line needs to be added to this file.</p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                #define SYS_getyear 22
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    Next, we need to add a pointer to the system call in the syscall.c file. This file contains an array
+                    of function pointers which uses the above-defined numbers (indexes) as pointers to system calls
+                    which are defined in a different location. In order to add our custom system call, add the following
+                    line to this file.
+                </p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                [SYS_getyear] sys_getyear,
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <h1 id="heppens">
+                    What exactly happens in here?
+                </h1>
+                <p>The underlying meaning of the above two changes is as follows.</p>
+                <ul>
+                    <li class="no-p-margin">
+                        When the system call with number 22 is called by a user program, the function pointer
+                        sys_getyear which has the index SYS_getyear or 22 will call the system call function
+                        <p></p>
+                    </li>
+                </ul>
+                <p>
+                    Therefore, we need to implement the system call function. However, we do not implement the system
+                    call function in the syscall.c file. Instead, we only add the function prototype in here and we
+                    define the function implementation in a different file. The function prototype which needs to be
+                    added to the syscall.c file is as follows.
+                </p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                extern int sys_getyear(void);
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    Next, we will implement the system call function. In order to do this, open the sysproc.c file where
+                    system call functions are defined.
+                </p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                // return the year of which the Unix version 6 was released<br>
+                                int<br>
+                                sys_getyear(void)<br>
+                                { <br>
+                                    return 1975;<br>
+                                }<br>
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    The basic implementation of the system call is now complete. However, there are 2 more minor steps
+                    remaining.
+                </p>
+
+                <h1 id="Add-interface">Add the interface for the system call</h1>
+                <p>In order for a user program to call the system call, an interface needs to be added. Therefore, we
+                    need to edit the usys.S file where we should add the following line.
+                </p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                SYSCALL(getyear)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>Next, the user.h file needs to be edited.
+                </p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                int getyear(void);
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    This would be the function which the user program calls. This function will be mapped to the system
+                    call with the number 22 which is defined as SYS_getyear preprocessor directive.
+                </p>
+                <p>
+                    If you have completed all of the above, you have successfully added a new system call to xv6.
+                    However, in order to test the functionality of this, you would need to add a user program which
+                    calls this system call.
+                </p>
+                <p>
+                    The user program could be as follows.
+                </p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+                                #include “types.h”<br/>
+                                #include “stat.h”<br/>
+                                #include “user.h”<br/>
+                                <br/>
+                                int<br/>
+                                main(void)<br/>
+                                {<br/>
+                                    printf(1, “Unix V6 was released in the year %d\n”, getyear());<br/>
+                                    exit();<br/>
+                                }<br/>
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <!--     <h2 class="footer-heading">Iran University of Science and Technology</h2> -->
+        <div class="footer-col-wrapper">
+            <div class="footer-col  footer-col-1">
+
+                <ul class="contact-list">
+                    <li><strong>Iran University of Science and Technology</strong></li>
+                    <li></li>
+                    <li><a href=" "> </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-2">
+
+
+                <p class="text">
+                    School of Computer Engineering<br/>
+                    Iran University of Science and Technology<br/>
+                    Tehran, Iran<br/>
+
+            </div>
+
+            <div class="footer-col  footer-col-3">
+                <ul class="social-media-list">
+
+
+                    <li>
+                        <a href="mailto:vahidmohsseni@gmail.com">
+                            <i class="fas fa-envelope" style="color:gray"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://mohsseni.com/" target="_blank">
+                            <i class="fas fa-globe" style="color:gray"></i>
+                        </a>
+                    </li>
+
+
+                    <!--                    <li>-->
+                    <!--                        <a href="http://webpages.iust.ac.ir/msharifi/" target="_blank">-->
+                    <!--                            <i class="fas fa-globe" style="color:gray"></i> webpages.iust.ac.ir/msharifi/-->
+                    <!--                        </a>-->
+                    <!--                    </li>-->
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
