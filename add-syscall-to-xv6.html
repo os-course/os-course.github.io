@@ -109,48 +109,19 @@
                 <h1 id="Add">Adding a custom system call in xv6</h1>
                 <p>In order to define your own system call in xv6, you need to make changes to 5 files. Namely, these
                     files are as follows.</p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                1. syscall.h<br>
-                                2. syscall.c<br>
-                                3. sysproc.c<br>
-                                4. usys.S<br>
-                                5. user.h
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. syscall.h<br>2. syscall.c<br>3. sysproc.c<br>4. usys.S<br>5. user.h</code></pre></div></div>
                 <h1 id="write">Let’s write a system call to return the year Unix version 6 was released.</h1>
                 <p>We would start the procedure by editing syscall.h in which a number is given to every system call.
                     This file already contains 21 system calls. In order to add the custom system call, the following
                     line needs to be added to this file.</p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                #define SYS_getyear 22
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#define SYS_getyear 22</code></pre></div></div>
                 <p>
                     Next, we need to add a pointer to the system call in the syscall.c file. This file contains an array
                     of function pointers which uses the above-defined numbers (indexes) as pointers to system calls
                     which are defined in a different location. In order to add our custom system call, add the following
                     line to this file.
                 </p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                [SYS_getyear] sys_getyear,
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[SYS_getyear] sys_getyear,</code></pre></div></div>
                 <h1 id="heppens">
                     What exactly happens in here?
                 </h1>
@@ -168,33 +139,12 @@
                     define the function implementation in a different file. The function prototype which needs to be
                     added to the syscall.c file is as follows.
                 </p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                extern int sys_getyear(void);
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extern int sys_getyear(void);</code></pre></div></div>
                 <p>
                     Next, we will implement the system call function. In order to do this, open the sysproc.c file where
                     system call functions are defined.
                 </p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                // return the year of which the Unix version 6 was released<br>
-                                int<br>
-                                sys_getyear(void)<br>
-                                { <br>
-                                    return 1975;<br>
-                                }<br>
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// return the year of which the Unix version 6 was released<br>int<br>sys_getyear(void)<br>{ <br>return 1975;<br>}<br></code></pre></div></div>
                 <p>
                     The basic implementation of the system call is now complete. However, there are 2 more minor steps
                     remaining.
@@ -204,26 +154,11 @@
                 <p>In order for a user program to call the system call, an interface needs to be added. Therefore, we
                     need to edit the usys.S file where we should add the following line.
                 </p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                SYSCALL(getyear)
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-                <p>Next, the user.h file needs to be edited.
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SYSCALL(getyear)</code></pre></div></div>
+                <p>
+                    Next, the user.h file needs to be edited.
                 </p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                int getyear(void);
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int getyear(void);</code></pre></div></div>
                 <p>
                     This would be the function which the user program calls. This function will be mapped to the system
                     call with the number 22 which is defined as SYS_getyear preprocessor directive.
@@ -236,24 +171,7 @@
                 <p>
                     The user program could be as follows.
                 </p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-                            <code>
-                                #include “types.h”<br/>
-                                #include “stat.h”<br/>
-                                #include “user.h”<br/>
-                                <br/>
-                                int<br/>
-                                main(void)<br/>
-                                {<br/>
-                                    printf(1, “Unix V6 was released in the year %d\n”, getyear());<br/>
-                                    exit();<br/>
-                                }<br/>
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include “types.h”<br/>#include “stat.h”<br/>#include “user.h”<br/><br/>int<br/>main(void)<br/>{<br/>printf(1, “Unix V6 was released in the year %d\n”, getyear());<br/>exit();<br/>}<br/></code></pre></div></div>
             </article>
 
         </div>
