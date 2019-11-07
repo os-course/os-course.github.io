@@ -987,3 +987,14 @@ ul#archive li span a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.color-code-key{
+  color: magenta;
+}
+
+.color-code-comment{
+  color: #00cc99;
+}
+.color-code-datatype{
+  color: #EB347B
+}

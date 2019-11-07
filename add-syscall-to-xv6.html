@@ -114,7 +114,7 @@
                 <p>We would start the procedure by editing syscall.h in which a number is given to every system call.
                     This file already contains 21 system calls. In order to add the custom system call, the following
                     line needs to be added to this file.</p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#define SYS_getyear 22</code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#<span class="color-code-key">define</span> SYS_getyear <span class="color-code-datatype">22</span></code></pre></div></div>
                 <p>
                     Next, we need to add a pointer to the system call in the syscall.c file. This file contains an array
                     of function pointers which uses the above-defined numbers (indexes) as pointers to system calls
@@ -139,12 +139,12 @@
                     define the function implementation in a different file. The function prototype which needs to be
                     added to the syscall.c file is as follows.
                 </p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extern int sys_getyear(void);</code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class='color-code-key'>extern</span> <span class='color-code-datatype'>int</span> sys_getyear(<span class='color-code-datatype'>void</span>);</code></pre></div></div>
                 <p>
                     Next, we will implement the system call function. In order to do this, open the sysproc.c file where
                     system call functions are defined.
                 </p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// return the year of which the Unix version 6 was released<br>int<br>sys_getyear(void)<br>{ <br>return 1975;<br>}<br></code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class='color-code-comment'>// return the year of which the Unix version 6 was released</span><br><span class='color-code-datatype'>int</span><br>sys_getyear(<span class='color-code-datatype'>void</span>)<br>{ <br><span class='color-code-key'>return</span> <span class='color-code-datatype'>1975</span>;<br>}<br></code></pre></div></div>
                 <p>
                     The basic implementation of the system call is now complete. However, there are 2 more minor steps
                     remaining.
@@ -158,7 +158,7 @@
                 <p>
                     Next, the user.h file needs to be edited.
                 </p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int getyear(void);</code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class='color-code-datatype'>int</span> getyear(<span class="color-code-datatype">void</span>);</code></pre></div></div>
                 <p>
                     This would be the function which the user program calls. This function will be mapped to the system
                     call with the number 22 which is defined as SYS_getyear preprocessor directive.
@@ -171,7 +171,7 @@
                 <p>
                     The user program could be as follows.
                 </p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include “types.h”<br/>#include “stat.h”<br/>#include “user.h”<br/><br/>int<br/>main(void)<br/>{<br/>printf(1, “Unix V6 was released in the year %d\n”, getyear());<br/>exit();<br/>}<br/></code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#<span class='color-code-key'>include</span><span class='color-code-datatype'> “types.h”</span><br/>#<span class='color-code-key'>include</span> <span class='color-code-datatype'>“stat.h”</span><br/>#<span class='color-code-key'>include</span> <span class='color-code-datatype'>“user.h”</span><br/><br/><span class='color-code-datatype'>int</span><br/>main(<span class='color-code-datatype'>void</span>)<br/>{<br/><span class='color-code-key'>printf</span>(1, <span class='color-code-comment'>“Unix V6 was released in the year %d\n”</span>, getyear());<br/><span class='color-code-key'>exit</span>();<br/>}<br/></code></pre></div></div>
             </article>
 
         </div>
@@ -209,12 +209,12 @@
 
                     <li>
                         <a href="mailto:vahidmohsseni@gmail.com">
-                            <i class="fas fa-envelope" style="color:gray"></i>
+                            <i class="fas fa-envelope" style="color:gray"></i> vahidmohsseni@gmail.com
                         </a>
                     </li>
                     <li>
                         <a href="http://mohsseni.com/" target="_blank">
-                            <i class="fas fa-globe" style="color:gray"></i>
+                            <i class="fas fa-globe" style="color:gray"></i> http://mohsseni.com/
                         </a>
                     </li>
 
