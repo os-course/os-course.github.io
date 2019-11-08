@@ -92,7 +92,7 @@
     <div class="wrapper">
         <div class="home">
 
-            <h1>Adding New System Calls to xv6</h1>
+            <h1>Adding New System Calls to Xv6</h1>
 
             <br>
 
@@ -106,17 +106,17 @@
                     are called.
                 </p>
 
-                <h1 id="Add">Adding a custom system call in xv6</h1>
-                <p>In order to define your own system call in xv6, you need to make changes to 5 files. Namely, these
+                <h1 id="Add">Adding a custom system call in Xv6</h1>
+                <p>In order to define your own system call in Xv6, you need to make changes to 5 files. Namely, these
                     files are as follows.</p>
                 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. syscall.h<br>2. syscall.c<br>3. sysproc.c<br>4. usys.S<br>5. user.h</code></pre></div></div>
                 <h1 id="write">Let’s write a system call to return the year Unix version 6 was released.</h1>
-                <p>We would start the procedure by editing syscall.h in which a number is given to every system call.
+                <p>We would start the procedure by editing <code class='highlighter-rouge'>syscall.h</code> in which a number is given to every system call.
                     This file already contains 21 system calls. In order to add the custom system call, the following
                     line needs to be added to this file.</p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#<span class="color-code-key">define</span> SYS_getyear <span class="color-code-datatype">22</span></code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="color-code-key">#define</span> SYS_getyear <span class="color-code-datatype">22</span></code></pre></div></div>
                 <p>
-                    Next, we need to add a pointer to the system call in the syscall.c file. This file contains an array
+                    Next, we need to add a pointer to the system call in the <code class='highlighter-rouge'>syscall.c</code> file. This file contains an array
                     of function pointers which uses the above-defined numbers (indexes) as pointers to system calls
                     which are defined in a different location. In order to add our custom system call, add the following
                     line to this file.
@@ -129,19 +129,19 @@
                 <ul>
                     <li class="no-p-margin">
                         When the system call with number 22 is called by a user program, the function pointer
-                        sys_getyear which has the index SYS_getyear or 22 will call the system call function
+                        <code class='highlighter-rouge'>sys_getyear</code> which has the index <code class='highlighter-rouge'>SYS_getyear</code> or 22 will call the system call function
                         <p></p>
                     </li>
                 </ul>
                 <p>
                     Therefore, we need to implement the system call function. However, we do not implement the system
-                    call function in the syscall.c file. Instead, we only add the function prototype in here and we
+                    call function in the <code class="highlighter-rouge">syscall.c</code> file. Instead, we only add the function prototype in here and we
                     define the function implementation in a different file. The function prototype which needs to be
                     added to the syscall.c file is as follows.
                 </p>
                 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class='color-code-key'>extern</span> <span class='color-code-datatype'>int</span> sys_getyear(<span class='color-code-datatype'>void</span>);</code></pre></div></div>
                 <p>
-                    Next, we will implement the system call function. In order to do this, open the sysproc.c file where
+                    Next, we will implement the system call function. In order to do this, open the <code class='highlighter-rouge'>sysproc.c</code> file where
                     system call functions are defined.
                 </p>
                 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class='color-code-comment'>// return the year of which the Unix version 6 was released</span><br><span class='color-code-datatype'>int</span><br>sys_getyear(<span class='color-code-datatype'>void</span>)<br>{ <br><span class='color-code-key'>return</span> <span class='color-code-datatype'>1975</span>;<br>}<br></code></pre></div></div>
@@ -152,26 +152,26 @@
 
                 <h1 id="Add-interface">Add the interface for the system call</h1>
                 <p>In order for a user program to call the system call, an interface needs to be added. Therefore, we
-                    need to edit the usys.S file where we should add the following line.
+                    need to edit the <code class="highlighter-rouge">usys.S</code> file where we should add the following line.
                 </p>
                 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SYSCALL(getyear)</code></pre></div></div>
                 <p>
-                    Next, the user.h file needs to be edited.
+                    Next, the <code class='highlighter-rouge'>user.h</code> file needs to be edited.
                 </p>
                 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class='color-code-datatype'>int</span> getyear(<span class="color-code-datatype">void</span>);</code></pre></div></div>
                 <p>
                     This would be the function which the user program calls. This function will be mapped to the system
-                    call with the number 22 which is defined as SYS_getyear preprocessor directive.
+                    call with the number 22 which is defined as <code class='highlighter-rouge'>SYS_getyear</code> preprocessor directive.
                 </p>
                 <p>
-                    If you have completed all of the above, you have successfully added a new system call to xv6.
+                    If you have completed all of the above, you have successfully added a new system call to Xv6.
                     However, in order to test the functionality of this, you would need to add a user program which
                     calls this system call.
                 </p>
                 <p>
                     The user program could be as follows.
                 </p>
-                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#<span class='color-code-key'>include</span><span class='color-code-datatype'> “types.h”</span><br/>#<span class='color-code-key'>include</span> <span class='color-code-datatype'>“stat.h”</span><br/>#<span class='color-code-key'>include</span> <span class='color-code-datatype'>“user.h”</span><br/><br/><span class='color-code-datatype'>int</span><br/>main(<span class='color-code-datatype'>void</span>)<br/>{<br/><span class='color-code-key'>printf</span>(1, <span class='color-code-comment'>“Unix V6 was released in the year %d\n”</span>, getyear());<br/><span class='color-code-key'>exit</span>();<br/>}<br/></code></pre></div></div>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class='color-code-key'>#include</span><span class='color-code-datatype'> “types.h”</span><br/><span class='color-code-key'>#include</span> <span class='color-code-datatype'>“stat.h”</span><br/><span class='color-code-key'>#include</span> <span class='color-code-datatype'>“user.h”</span><br/><br/><span class='color-code-datatype'>int</span><br/>main(<span class='color-code-datatype'>void</span>)<br/>{<br/><span class='color-code-key'>printf</span>(1, <span class='color-code-comment'>“Unix V6 was released in the year %d\n”</span>, getyear());<br/><span class='color-code-key'>exit</span>();<br/>}<br/></code></pre></div></div>
             </article>
 
         </div>
