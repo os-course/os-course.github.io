@@ -325,7 +325,7 @@ h6 {
  * Links
  */
 a {
-  color: #0077CC;
+  color: #cc0000;
   text-decoration: none; }
   a:visited {
     /*    color: darken($brand-color, 15%); */ }
@@ -533,7 +533,7 @@ a.tosu {
   height: 60px;
   background-repeat: no-repeat;
   overflow: hidden;
-  border: 2px solid #0077CC;
+  border: 2px solid #cc0000;
   border-radius: 5%;
   margin-right: 10px;
   background-position: center;
