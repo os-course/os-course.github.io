@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125957901-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-125957901-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Operating Systems: Assignments</title>
+    <meta name="description" content="Operating Systems
+">
+
+    <link rel="stylesheet" href="/fall19/_css/main.css">
+    <link rel="canonical" href="http://os-course.github.io/fall19/assignments/">
+    <link rel="alternate" type="application/rss+xml" title="Iran University of Science and Technology" href="http://os-course.github.io/fall19/feed.xml" />
+    <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="wrapper">
+        <table><tr>
+            <td><img width="250" src="/fall19/_images/dslab_iust.png" valign="middle"></td>
+            <td style="padding-left:10px;"><a style="font-size: 15px;color: #ffffffc7;" class="site-title" href=""></a>
+                <br/>
+                <span style="margin-top: -2px;margin-bottom: -10px;" class="site-title"><b> Operating Systems</b></span>
+                <br/>
+                <span style="color: #000000;font-size: 12px;font-weight: bold;">Fall 2019</span>
+            </td>
+        </tr></table>
+
+        <nav class="site-nav">
+
+            <a href="#" class="menu-icon menu.open">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+            </a>
+
+            <div class="trigger"><h1>Main Navigation</h1>
+
+                <ul class="menu">
+                    <li><a class="page-link" href="/fall19/"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                    <li><a class="page-link" href="/fall19/schedule/"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a class="page-link" href="/fall19/lectures/"><i class="fas fa-book-reader"></i> Lectures</a></li>
+                    <li><a class="page-link" href="/fall19/assignments/"><i class="fas fa-user-graduate"></i> Assignments</a></li>
+                    <li><a class="page-link" href="/fall19/final_project/"><i class="fas fa-user-graduate"></i>Final Project</a></li>
+                    <li><a class="page-link" href="/fall19/course-materials/"><i class="fas fa-book"></i> Course Materials</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+    </div>
+
+</header>
+
+<div class="page-content">
+    <div class="wrapper">
+        <div class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">#4 Homework - Xv6, IPC</h1>
+                <!--                <p class="post-meta">Released on Wednesday 1397/7/4</p>-->
+                <div>
+                    <a title="Download homework (pdf)" href="/fall19/static_files/assignments/HW2.pdf">
+                        <i class="fas fa-file-pdf"> Download</i>
+                    </a>
+                </div>
+            </header>
+
+            <!--            <div>-->
+
+            <!--                <p style="font-weight: bold">Download-->
+
+            <!--                    [<a href="/fall19/static_files/assignments/assignment01.pdf">problems</a>]-->
+
+
+            <!--                    [<a href="/fall19/static_files/assignments/assignment01.zip">attachment</a>]-->
+
+
+            <!--                </p>-->
+
+            <!--                <div style="color: gray;">-->
+            <!--                    <h3>Late Policy</h3>-->
+            <!--                    <ul>-->
+
+            <!--                        <li>You have free 8 late days.</li>-->
+
+            <!--                        <li>You can use late days for assignments. A late day extends the deadline 24 hours.</li>-->
+
+            <!--                        <li>Once you have used all 8 late days, the penalty is 10% for each additional late day.</li>-->
+
+            <!--                    </ul>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <br />
+            <article class="post-content">
+                <h1 id="pre">Prerequisite</h1>
+                <p>Create an account on
+                    <a href="https://git.chillinwars.ir/" target="_blank">https://git.chillinwars.ir/</a>
+                    and fork the repository
+                    <a target="_blank" href="https://git.chillinwars.ir/vahid/xv6-public">https://git.chillinwars.ir/vahid/xv6-public</a>.
+                    Make sure that your forked repository is private. You can make your repository <strong>private</strong> via <i>Settings → General → Permissions → Project visibility → Private</i>
+                    from the side panel of the repository. Do not forget to push the Save changes button. Add the following accounts as members to your forked repository.
+                    You can add members to your repository via <i>Settings → Members</i>.
+                </p>
+
+                <ul style="list-style-type: disc; color: #3a3a3a">
+                    <li class="">@Vahid</li>
+                    <li class="">@EAliakbar</li>
+                    <li class="">@Sorouri</li>
+                    <li class="">@FShahinfar</li>
+                    <li class="">@Hadian</li>
+                </ul>
+
+                <p>
+                    Clone your repository in your laptop and then follow the instruction from this
+                    <a href="https://os-course.github.io/xv6-install.html" target="_blank">link</a>. Then perform the question 1.
+                </p>
+
+                <h1 id="q1">Question 1</h1>
+                <p>Create a branch named <code class="highlighter-rouge"><i>HW2_Q1</i></code> in your repository.
+                    Add a new system call to xv6. The system call you add must return information about processes in
+                    the RUNNING or RUNNABLE state as an array of struct <code class="highlighter-rouge">proc_info</code>.
+                    This array must be sorted in ascending order according to the memory usage of each process.
+                    Structure <code class="highlighter-rouge">proc_info</code> is defined as follow.
+                </p>
+                <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="color-code-key">struct</span> proc_info {<br>    <span class="color-code-key">int</span> pid;<br>    <span class="color-code-key">int</span> memsize;            <span class="color-code-comment">// in bytes</span><br>};</code></pre></div></div>
+                <p>
+                    You should write a test program for this system call. The test program may use the
+                    <code class="highlighter-rouge">fork()</code> system call to create some processes and
+                    <code class="highlighter-rouge">malloc()</code> system call to allocate some randomly sized memory
+                    for each process. Try to prove that your system call works as described. Note that:
+                    <ul style="list-style-type: disc; color: #3a3a3a">
+                        <li>The process table is in the proc.c file;</li>
+                        <li> The proc struct is implemented in proc.h file. This struct represents the process control block;</li>
+                        <li> You should add the test file to UPROGS list in Makefile;</li>
+                        <li> If you define a new source file, you should add it to Makefile;</li>
+                        <li> You may need to share the process table so that other source files can access it.</li>
+                    </ul>
+                </p>
+
+                <h1 id="q2">Question 2</h1>
+                <p>Cross Memory Attach (CMA) is one of the models for Inter-Process Communication.
+                    The system calls <code class="highlighter-rouge">process_vm_read()</code> and
+                    <code class="highlighter-rouge">process_vm_write()</code> are based on this model.
+                    These two system calls were fully described in the class session.
+                    Assume one of the two following scenarios based on your student number and implement
+                    two C programs to satisfy the desired scenario.
+                    The students with odd student number should consider the first scenario and the others consider second.
+                </p>
+
+                <ol style="color: #3a3a3a">
+                    <li class="">A producer program should produce 3 Gigabytes data. A consumer should read that data and prints out.</li>
+                    <li class="">A producer produces 3 Gigabytes of data and then writes in the consumer's memory space.</li>
+                </ol>
+                <p>
+                    <strong>Note</strong> that to synchronize the producer with the consumer you can use either
+                    <code class="highlighter-rouge">getchar()</code> or <code class="highlighter-rouge">sleep()</code>.
+                    Also, recall <code class="highlighter-rouge">memset()</code> from the class session to generate data.
+                </p>
+
+                <h1 id="due-dates">Deadline</h1>
+                <p></p>
+                <ul>
+                    <li><strong>Monday</strong> 4th Nov. 23:55</li>
+                    <li>The submission after this time will not be accepted with no exception. </li>
+
+                </ul>
+
+                <h1 id="submission">Submission</h1>
+                <p>Submit a <strong>zip</strong> file to <a href="http://lms.iust.ac.ir/" target="_blank">lms</a>.
+                    The file should be named as <code class="highlighter-rouge">your-student-number.zip</code>.
+                    E.g. <code class="highlighter-rouge">96521234.zip</code>.
+                </p>
+
+                <ul style="list-style-type: disc">
+                    <li class="">For Question 1: Make a directory named <code class="highlighter-rouge"><i>q1</i></code> and only copy the files you have modified from Xv6 project.</li>
+                    <li class="">For Question 2: Make a directory named <code class="highlighter-rouge"><i>q2</i></code> and put the codes you have written into it.</li>
+                </ul>
+
+                <p>
+                    Finally, include these two directories in your zip file and submit it into LMS.
+                    Also, you must commit and push your changes for question 1 into <code class="highlighter-rouge"><i>HW2_Q1</i></code> branch
+                    of your repository before the deadline.
+                </p>
+
+
+            </article>
+
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <!--     <h2 class="footer-heading">Iran University of Science and Technology</h2> -->
+        <div class="footer-col-wrapper">
+            <div class="footer-col  footer-col-1">
+
+                <ul class="contact-list">
+                    <li><strong>Iran University of Science and Technology</strong></li>
+                    <li></li>
+                    <li><a href=" "> </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-2">
+
+
+                <p class="text">
+                    School of Computer Engineering<br />
+                    Iran University of Science and Technology<br />
+                    Tehran, Iran<br />
+
+            </div>
+
+            <div class="footer-col  footer-col-3">
+                <ul class="social-media-list">
+
+
+
+
+
+                    <!--  <li>
+                        <a href=" ">
+                          <i class="fab fa-twitter" style="color:gray"></i>
+                        </a>
+                      </li>-->
+
+
+
+
+
+
+
+                    <li>
+                        <a href="http://webpages.iust.ac.ir/msharifi//">
+                            <i class="fas fa-globe" style="color:gray"></i> webpages.iust.ac.ir/msharifi/
+                        </a>
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
