@@ -6,7 +6,7 @@
   border-top: 0px solid #424242;
   border-bottom: 4px solid #500516;
   min-height: 56px;
-  background: #e7e7e7;
+  background: #729af494;
   position: relative; }
 
 .site-title {
@@ -525,7 +525,7 @@ a.tosu {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #e7e7e7;
+  background-color: rgba(142, 178, 255, 0.58);
   border-color: #3a3a3a; }
 
 .center-cropped {
