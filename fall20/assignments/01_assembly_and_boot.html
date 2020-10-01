@@ -122,16 +122,15 @@
 
                 <div class="highlighter-rouge">
                     <div class="highlight">
-                        <pre class="highlight"><code><span class="color-code-key">$ clone</span> https://github.com/os-course/iustfall20<br><span class="color-code-key">$ cd</span> iustfall20/01_bootloader<br><span class="color-code-key">$ chmod</span> +x generate_iso.sh<br><span class="color-code-key">$ ./generate_iso.sh</span> file_name.asm
-                            </code>
-                        </pre>
+                        <pre class="highlight"><code><span class="color-code-key">$ clone</span> https://github.com/os-course/iustfall20<br><span class="color-code-key">$ cd</span> iustfall20/01_bootloader<br><span class="color-code-key">$ chmod</span> +x generate_iso.sh<br><span class="color-code-key">$ ./generate_iso.sh</span> file_name.asm</code></pre>
                     </div>
                 </div>
 
                 <h1 id="part-2">Part 2</h1>
                 <p>
-                    Add a function to move the cursor of the screen to the head of the next line.
-                    You might use 2 special characters. Their hex value is "0x0A" and "0x0D".
+                    Add a function to move the cursor of the screen to the head of the next line. Name the function
+                    <code class="highlighter-rouge">print_newline</code>
+                    You might use 2 special characters. Their hex value is <strong>0x0A</strong> and <strong>0x0D</strong>.
                 </p>
 
                 <h1 id="part-3">Part 3</h1>
@@ -147,11 +146,7 @@
                 </p>
                 <div class="highlighter-rouge">
                     <div class="highlight">
-                        <pre class="highlight">
-                            <code><span class="color-code-comment">; Example of a test for the print_hex function</span><br><span class="color-code-key">mov dx, 0xA91F</span><br><span class="color-code-key">call print_hex</span><br><span class="color-code-comment">; The result should be 0xA91F</span>
-
-                            </code>
-                        </pre>
+                        <pre class="highlight"><code><span class="color-code-comment">; Example of a test for the print_hex function</span><br><span class="color-code-key">mov dx, 0xA91F</span><br><span class="color-code-key">call print_hex</span><br><span class="color-code-comment">; The result should be 0xA91F</span></code></pre>
                     </div>
                 </div>
 
