@@ -1001,6 +1001,6 @@ ul#archive li span a:hover {
 }
 
 .table-border-margin{
-  border-bottom: black 1px;
-  border-right: black 1px;
+  border-bottom: black 1px solid;
+  border-right: black 1px solid;
 }
