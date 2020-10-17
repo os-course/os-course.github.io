@@ -124,26 +124,26 @@
                 </p>
                 <h3>Examples</h3>
 
-                <table style="border: 1px solid black">
+                <table class="table-border-solid">
                     <tr>
-                        <th class="table-header">Input</th>
-                        <th class="table-header">Output</th>
+                        <th class="table-header table-border-margin">Input</th>
+                        <th class="table-header table-border-margin">Output</th>
                     </tr>
-                    <tr class="table-row">
-                        <td>10# + 50 = 10052</td>
-                        <td>1002 + 50 = 10052</td>
+                    <tr>
+                        <td class="table-border-margin">10# + 50 = 10052</td>
+                        <td class="table-border-margin">1002 + 50 = 10052</td>
                     </tr>
-                    <tr class="table-row">
-                        <td>#2 + 3 = 26</td>
-                        <td>-1</td>
+                    <tr>
+                        <td class="table-border-margin">#2 + 3 = 26</td>
+                        <td class="table-border-margin">-1</td>
                     </tr>
-                    <tr class="table-row">
-                        <td>12 + 13 = #</td>
-                        <td>12 + 13 = 25</td>
+                    <tr>
+                        <td class="table-border-margin">12 + 13 = #</td>
+                        <td class="table-border-margin">12 + 13 = 25</td>
                     </tr>
-                    <tr class="table-row">
-                        <td>50 + 1#2 = 10052</td>
-                        <td>50 + 10002 = 10052</td>
+                    <tr>
+                        <td class="table-border-margin">50 + 1#2 = 10052</td>
+                        <td class="table-border-margin">50 + 10002 = 10052</td>
                     </tr>
                 </table>
 
@@ -160,6 +160,13 @@
                     <li><code class="highlighter-rouge">search</code></li>
                     <ul><li>if a value exists in tree return 1 otherwise, 0.</li></ul>
                 </ul>
+
+
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="color-code-key">typedef struct </span><span>&lt your struct ...&gt </span><span class="color-code-key">btree_t;</span><br><span class="color-code-comment">/* Add value to the tree</span><br><span class="color-code-comment">* return 1 if successful otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_add_node (<span class="color-code-key">btree_t *t, int value</span>);</span><br><span class="color-code-key">...</span><br></code></pre>
+                    </div>
+                </div>
 
 
 

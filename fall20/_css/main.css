@@ -995,3 +995,12 @@ ul#archive li span a:hover {
 .color-code-comment{
   color: #00cc99;
 }
+
+.table-border-solid{
+  border: 1px solid darkmagenta;
+}
+
+.table-border-margin{
+  border-bottom: black 1px;
+  border-right: black 1px;
+}
