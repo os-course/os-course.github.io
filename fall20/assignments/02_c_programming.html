@@ -113,8 +113,8 @@
             <br />
             <article class="post-content">
                 <h1 id="question-1">Question 1</h1>
-                <p>Write a console program in C language that takes an equation in the form of `A + B = C`
-                    from the standard input. `A`, `B` and `C` are either a number having at most `10` digits or
+                <p>Write a console program in C language that takes an equation in the form of <code class="highlighter-rouge">A + B = C</code>
+                    from the standard input. <code class="highlighter-rouge">A</code>, <code class="highlighter-rouge">B</code> and <code class="highlighter-rouge">C</code> are either a number having at most `10` digits or
                     a combination of number and a single number sign (`#`). The number sign is a placeholder
                     for any number with any number of digits. If there exists a sequence of numbers which
                     substitute the `#`, and the equation is valid then the program should write the full equation
@@ -151,7 +151,7 @@
 
                 <h1 id="question-2">Question 2</h1>
                 <p>
-                    Implement a binary tree in C language. For simplicity's sake, consider adding unique values to the tree.
+                    Implement a binary tree in C language. For simplicity's sake, consider adding unique positive values to the tree.
                     Your data structure should contain the following methods:
                 </p>
                 <ul style="list-style-type: disc">
@@ -164,7 +164,7 @@
 
                 <div class="highlighter-rouge">
                     <div class="highlight">
-                        <pre class="highlight"><code><span class="color-code-key">typedef struct </span><span>&lt your struct ...&gt </span><span class="color-code-key">btree_t;</span><br><span class="color-code-comment">/* Add value to the tree</span><br><span class="color-code-comment">* return 1 if successful otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_add_node (<span class="color-code-key">btree_t *t, int value</span>);</span><br><span class="color-code-key">...</span><br></code></pre>
+                        <pre class="highlight"><code><span class="color-code-key">typedef struct </span><span>&lt your struct ...&gt </span><span class="color-code-key">btree_t;</span><br><br><span class="color-code-comment">/* Add value to the tree</span><br><span class="color-code-comment">* return 1 if successful otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_add_node (<span class="color-code-key">btree_t *t, int value</span>);</span><br><br><span class="color-code-comment">/* Remove a value from the tree</span><br><span class="color-code-comment">* return 1 if successful otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_remove_node (<span class="color-code-key">btree_t *t, int value</span>);</span><br><br><span class="color-code-comment">/* Look up a value in the tree</span><br><span class="color-code-comment">* return 1 if found otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_search (<span class="color-code-key">btree_t *t, int value</span>);</span><br><br></code></pre>
                     </div>
                 </div>
 
