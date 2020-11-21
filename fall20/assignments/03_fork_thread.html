@@ -190,13 +190,13 @@
                 <div class="highlighter-rouge">
                     <div class="highlight">
                         <pre class="highlight">
-                            <code><span class="color-code-key">struct </span><span>task {</span>
-                                <span class="color-code-key">int </span><span>id;            </span><span class="color-code-comment">// id of this task</span>
-                                <span class="color-code-key">int </span><span>value;         </span><span class="color-code-comment">// value of this task</span>
-                                <span class="color-code-key">int </span><span>unit_count;    </span><span class="color-code-comment">// number of units</span>
-                                <span class="color-code-key">int </span><span>*unit_id;      </span><span class="color-code-comment">// list of units which task will be assigned to</span>
-                                <span>}</span>
-                            </code>
+<code><span class="color-code-key">struct </span><span>task {</span>
+    <span class="color-code-key">int </span><span>id;            </span><span class="color-code-comment">// id of this task</span>
+    <span class="color-code-key">int </span><span>value;         </span><span class="color-code-comment">// value of this task</span>
+    <span class="color-code-key">int </span><span>unit_count;    </span><span class="color-code-comment">// number of units</span>
+    <span class="color-code-key">int </span><span>*unit_id;      </span><span class="color-code-comment">// list of units which task will be assigned to</span>
+    <span>}</span>
+</code>
                         </pre>
                     </div>
                 </div>
@@ -211,6 +211,40 @@
                     units have their own queue which these queues are filled by the dispatcher. The units should
                     go to sleep for 0.5 second after doing the task.
                 </p>
+
+                <table class="table-border-solid">
+                    <tr>
+                        <th class="table-header table-border-margin">Unit id</th>
+                        <th class="table-header table-border-margin">Operation</th>
+                        <th class="table-header table-border-margin">Desc.</th>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">0</td>
+                        <td class="table-border-margin">+7, %M</td>
+                        <td class="table-border-margin">Adds 7 to the value then modulate by M</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">1</td>
+                        <td class="table-border-margin">*2, %M</td>
+                        <td class="table-border-margin">Multiplies by 2 then modulate by M</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">2</td>
+                        <td class="table-border-margin">^5, %M</td>
+                        <td class="table-border-margin">Calculates the power 5 and then modulate by M</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">3</td>
+                        <td class="table-border-margin">-19</td>
+                        <td class="table-border-margin">Subtracts the value from 19</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">4</td>
+                        <td class="table-border-margin">print</td>
+                        <td class="table-border-margin">Prints the value of the task</td>
+                    </tr>
+
+                </table>
 
 
 
