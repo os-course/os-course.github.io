@@ -140,8 +140,6 @@
                 </ul>
 
 
-                <br><br>
-
                 <h1 id="question-2">Question 2</h1>
                 <p>
                     In <code class="highlighter-rouge">q2</code> directory, there is another C code just like the question 1.
@@ -166,6 +164,55 @@
                     Also, try to understand how variables look like in memory.
                 </p>
 
+                <h1 id="question-4">Question 4</h1>
+                <h2>Description</h2>
+
+                <p>
+                    Imagine a complex system like an office which has several processing units for doing tasks.
+                    In this office, there is a receptor whose job is queueing input tasks by order of reading
+                    them from the input. Then, a dispatcher should send these tasks to the corresponding unit
+                    of execution. The unit of execution does its own operation on the task, and if there are other
+                    associated units of executions, the task is returned to the waiting queue, otherwise, the task is
+                    done. Following figure illustrates the system structure.
+                </p>
+                <div>
+                    <img src="/fall20/static_files/assignments/HW3/example_diagram_v2.png" alt="Figure">
+                </div>
+
+                <h2>Task Structure</h2>
+
+                <p>
+                    The structure of task should have following information. You are allowed to add other
+                    attributes to it if you find it necessary. Point that the list of operations are <b>stack-like</b>.
+                    It means that the first unit to execute is the first element of its array.
+                </p>
+
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code><span class="color-code-key">struct </span><span>task {</span>
+                                <span class="color-code-key">int </span><span>id;            </span><span class="color-code-comment">// id of this task</span>
+                                <span class="color-code-key">int </span><span>value;         </span><span class="color-code-comment">// value of this task</span>
+                                <span class="color-code-key">int </span><span>unit_count;    </span><span class="color-code-comment">// number of units</span>
+                                <span class="color-code-key">int </span><span>*unit_id;      </span><span class="color-code-comment">// list of units which task will be assigned to</span>
+                                <span>}</span>
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <h2>Units and Operations</h2>
+                <p>
+                    Each unit of execution has its own operation which will be done on the value of tasks.
+                    For example, the unit 0 adds 7 to the value of the task then modulates the new number with
+                    <code class="highlighter-rouge">M</code>. <code class="highlighter-rouge">M</code> is a constant
+                    value which should be defined in your program with value of 10000. The reason of using modular
+                    division is to avoid value overflow. Each of these units are implemented as threads. Also, these
+                    units have their own queue which these queues are filled by the dispatcher. The units should
+                    go to sleep for 0.5 second after doing the task.
+                </p>
+
+
 
 
                 <ul style="list-style-type: disc">
@@ -187,12 +234,12 @@
                 <h1 id="due-dates">Deadline</h1>
                 <p></p>
                 <ul>
-                    <li><strong>Saturday</strong> 24th Oct. 23:00</li>
+                    <li><strong>Saturday</strong> 28th Nov. 23:00</li>
                 </ul>
 
 
                 <h1 id="submission">Submission</h1>
-                <p>Submit just a zip file ,containing 2 C files, in LMS. The file should be named as
+                <p>Submit just a zip file ,containing your codes and a report, in LMS. The file should be named as
                     [<code class="highlighter-rouge">9752xxxx.zip</code>].
                     For example <code class="highlighter-rouge">97521234.zip</code>.
 
