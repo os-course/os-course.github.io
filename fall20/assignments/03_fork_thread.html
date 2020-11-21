@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125957901-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-125957901-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Operating Systems: Assignments</title>
+    <meta name="description" content="Operating Systems
+">
+
+    <link rel="stylesheet" href="/fall20/_css/main.css">
+    <link rel="canonical" href="http://os-course.github.io/fall20/assignments/">
+    <link rel="alternate" type="application/rss+xml" title="Iran University of Science and Technology" href="http://os-course.github.io/fall20/feed.xml" />
+    <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="wrapper">
+        <table><tr>
+            <td><img width="250" src="/fall20/_images/dslab_iust.png" valign="middle"></td>
+            <td style="padding-left:10px;"><a style="font-size: 15px;color: #ffffffc7;" class="site-title" href=""></a>
+                <br/>
+                <span style="margin-top: -2px;margin-bottom: -10px;" class="site-title"><b> Operating Systems</b></span>
+                <br/>
+                <span style="color: #000000;font-size: 12px;font-weight: bold;">Fall 2020</span>
+            </td>
+        </tr></table>
+
+        <nav class="site-nav">
+
+            <a href="#" class="menu-icon menu.open">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+            </a>
+
+            <div class="trigger"><h1>Main Navigation</h1>
+
+                <ul class="menu">
+                    <li><a class="page-link" href="/fall20/"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                    <li><a class="page-link" href="/fall20/schedule/"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a class="page-link" href="/fall20/lectures/"><i class="fas fa-book-reader"></i> Lectures</a></li>
+                    <li><a class="page-link" href="/fall20/assignments/"><i class="fas fa-user-graduate"></i> Assignments</a></li>
+                    <li><a class="page-link" href="/fall20/final_project/"><i class="fas fa-user-graduate"></i>Final Project</a></li>
+                    <li><a class="page-link" href="/fall20/course-materials/"><i class="fas fa-book"></i> Course Materials</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+    </div>
+
+</header>
+
+<div class="page-content">
+    <div class="wrapper">
+        <div class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">#3 Assignment - Fork and Threads</h1>
+                <!--                <p class="post-meta">Released on Wednesday 1397/7/4</p>-->
+            </header>
+
+            <div>
+                <a title="Download homework (zip)" href="/fall20/static_files/assignments/HW1.zip">
+                    <i class="fas fa-file-archive"> Download</i>
+                </a>
+            </div>
+
+            <!--            <div>-->
+
+            <!--                <p style="font-weight: bold">Download-->
+
+            <!--                    [<a href="/fall20/static_files/assignments/assignment01.pdf">problems</a>]-->
+
+
+            <!--                    [<a href="/fall20/static_files/assignments/assignment01.zip">attachment</a>]-->
+
+
+            <!--                </p>-->
+
+            <!--                <div style="color: gray;">-->
+            <!--                    <h3>Late Policy</h3>-->
+            <!--                    <ul>-->
+
+            <!--                        <li>You have free 8 late days.</li>-->
+
+            <!--                        <li>You can use late days for assignments. A late day extends the deadline 24 hours.</li>-->
+
+            <!--                        <li>Once you have used all 8 late days, the penalty is 10% for each additional late day.</li>-->
+
+            <!--                    </ul>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <br />
+            <article class="post-content">
+                <h1 id="question-1">Question 1</h1>
+                <p>A web server is an application which can handle requests over the web.
+                    One of the characteristics that a web server should have is capable of
+                    responding to many clients within the low latency. E.g. consider Google as
+                    a web server which millions of clients can get their response simultaneously.
+                    A very simple web server program is attached to this homework. This web server
+                    only could response to clients one by one. Modify this program to address this issue.
+                </p>
+                <p>
+                    In this question, you should modify the attached file in <code class="highlighter-rouge">q1</code> directory.
+                    Please Include the modified file in your submission with this exact name and directory.
+                </p>
+
+                <ul style="list-style-type: disc; color: #3a3a3a">
+                    <li class="">Step 1: Compile and Run the <code class="highlighter-rouge">server.c</code></li>
+                    <li class="">Step 2: In your browser: <a href="http://localhost:8090/" target="_blank">http://localhost:8090/</a></li>
+                    <li class="">Step 3: Add <code class="highlighter-rouge gu">fork</code> to <code class="highlighter-rouge">server.c</code>; Then goto step 1.</li>
+                    <li class="">If you get the error: <code class="highlighter-rouge err">In bind: Address already in use</code> try to change PORT number in the file and then recompile and run.</li>
+
+                </ul>
+
+
+                <br><br>
+
+                <h1 id="question-2">Question 2</h1>
+                <p>
+                    In <code class="highlighter-rouge">q2</code> directory, there is another C code just like the question 1.
+                    Use <code class="highlighter-rouge gu">pthread</code> library in order to implement a
+                    multi-threaded server instead of multi-process server.
+
+                </p>
+
+                <ul style="list-style-type: disc; color: #3a3a3a">
+                    <li class="">Step 1: Compile and Run the <code class="highlighter-rouge">server.c</code></li>
+                    <li class="">Step 2: In your browser: <a href="http://localhost:8090/" target="_blank">http://localhost:8090/</a></li>
+                    <li class="">Step 3: Include <code class="highlighter-rouge gu">pthread</code> library and add necessary changes to <code class="highlighter-rouge">server.c</code>; Then goto step 1.</li>
+                    <li class="">If you get the error: <code class="highlighter-rouge err">In bind: Address already in use</code> try to change PORT number in the file and then recompile and run.</li>
+
+                </ul>
+
+                <h1 id="question-3">Question 3</h1>
+                <p>
+                    With completion of the question 1 and 2 you should be able to differentiate the multi-process and multi-thread
+                    programming. Write a report and submit it in <b>PDF</b> format, using the questions 1 and 2, try to explain
+                    what is different between these two approach, which are the advantages and disadvantages of each solution.
+                    Also, try to understand how variables look like in memory.
+                </p>
+
+
+
+                <ul style="list-style-type: disc">
+                    <li><code class="highlighter-rouge">add_node</code></li>
+                    <li><code class="highlighter-rouge">remove_node</code></li>
+                    <li><code class="highlighter-rouge">search</code></li>
+                    <ul><li>if a value exists in tree return 1 otherwise, 0.</li></ul>
+                </ul>
+
+
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="color-code-key">typedef struct </span><span>&lt your struct ...&gt </span><span class="color-code-key">btree_t</span>;<br><br><span class="color-code-comment">/* Add value to the tree</span><br><span class="color-code-comment"> * return 1 if successful otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_add_node (<span class="color-code-key">btree_t *t, int value</span>);</span><br><br><span class="color-code-comment">/* Remove a value from the tree</span><br><span class="color-code-comment"> * return 1 if successful otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_remove_node (<span class="color-code-key">btree_t *t, int value</span>);</span><br><br><span class="color-code-comment">/* Look up a value in the tree</span><br><span class="color-code-comment"> * return 1 if found otherwise 0.</span><br><span class="color-code-comment">* */</span><br><span class="color-code-key">int </span><span>btree_search (<span class="color-code-key">btree_t *t, int value</span>);</span><br><br></code></pre>
+                    </div>
+                </div>
+
+
+
+                <h1 id="due-dates">Deadline</h1>
+                <p></p>
+                <ul>
+                    <li><strong>Saturday</strong> 24th Oct. 23:00</li>
+                </ul>
+
+
+                <h1 id="submission">Submission</h1>
+                <p>Submit just a zip file ,containing 2 C files, in LMS. The file should be named as
+                    [<code class="highlighter-rouge">9752xxxx.zip</code>].
+                    For example <code class="highlighter-rouge">97521234.zip</code>.
+
+                </p>
+
+            </article>
+
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <!--     <h2 class="footer-heading">Iran University of Science and Technology</h2> -->
+        <div class="footer-col-wrapper">
+            <div class="footer-col  footer-col-1">
+
+                <ul class="contact-list">
+                    <li><strong>Iran University of Science and Technology</strong></li>
+                    <li></li>
+                    <li><a href=" "> </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-2">
+
+
+                <p class="text">
+                    School of Computer Engineering<br />
+                    Iran University of Science and Technology<br />
+                    Tehran, Iran<br />
+
+            </div>
+
+            <div class="footer-col  footer-col-3">
+                <ul class="social-media-list">
+
+
+
+
+
+                    <!--  <li>
+                        <a href=" ">
+                          <i class="fab fa-twitter" style="color:gray"></i>
+                        </a>
+                      </li>-->
+
+
+
+
+
+
+
+                    <li>
+                        <a href="http://webpages.iust.ac.ir/msharifi//">
+                            <i class="fas fa-globe" style="color:gray"></i> webpages.iust.ac.ir/msharifi/
+                        </a>
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
