@@ -1,5 +1,5 @@
 server:
-	gcc server.c -o server
+	gcc server.c -pthread -o server
 
 
 clean:
