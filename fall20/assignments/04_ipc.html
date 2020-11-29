@@ -159,16 +159,27 @@
                 </p>
 
                 <h1 id="question-2">Question 2</h1>
+                <p>
+                    Write a report about the following subjects:
+                </p>
+                <ol style="color: #850707">
+                    <li>The difference between Cross Memory Attach and other models of IPC methods introduced in the class.</li>
+                    <li>The safety of the pipe mechanism.</li>
+                    <li>Can <code class="highlighter-rouge">pthread_mutex_lock</code> be shared among processes
+                        (just like semaphores) instead of threads? Why or why not?</li>
+                </ol>
+
+                <h1 id="question-3">Question 3</h1>
+
                 <p>Cross Memory Attach (CMA) is one of the models for Inter-Process Communication.
                     The system calls <code class="highlighter-rouge">process_vm_read()</code> and
                     <code class="highlighter-rouge">process_vm_write()</code> are based on this model.
-                    These two system calls were fully described in the class session.
                     Assume one of the two following scenarios based on your student number and implement
                     two C programs to satisfy the desired scenario.
                     The students with odd student number should consider the first scenario and the others consider second.
                 </p>
 
-                <ol style="color: #3a3a3a">
+                <ol style="color: #07478c">
                     <li class="">A producer program should produce 3 Gigabytes data. A consumer should read that data and prints out.</li>
                     <li class="">A producer produces 3 Gigabytes of data and then writes in the consumer's memory space.</li>
                 </ol>
@@ -177,17 +188,15 @@
                     <code class="highlighter-rouge">getchar()</code> or <code class="highlighter-rouge">sleep()</code>.
                     Also, recall <code class="highlighter-rouge">memset()</code> from the class session to generate data.
                 </p>
-
-                <h1 id="question-3">Question 3</h1>
                 <p>
-                    Write a report about the following subjects:
+                    Some reading materials are:
+                    <br>
+                    <a target="_blank" href="https://man7.org/linux/man-pages/man2/process_vm_readv.2.html" >https://man7.org/linux/man-pages/man2/process_vm_readv.2.html</a>
+                    <br>
+                    <a href="https://lwn.net/Articles/405284/" target="_blank">https://lwn.net/Articles/405284/</a>
+                    <br>
+                    <a target="_blank" href="https://stackoverflow.com/questions/17324564/cross-memory-attach-how-do-i-get-the-remote-address-from-a-child-process-to-a-p">https://stackoverflow.com/questions/17324564/cross-memory-attach-how-do-i-get-the-remote-address-from-a-child-process-to-a-p</a>
                 </p>
-                <ol style="color: #c28182">
-                    <li>The difference between Cross Memory Attach and other models of IPC methods introduced in the class.</li>
-                    <li>The safety of the pipe mechanism.</li>
-                    <li>Is <code class="highlighter-rouge">pthread_mutex_lock</code> can be shared among processes
-                    (just like semaphores) instead of threads? Why or why not?</li>
-                </ol>
 
 
                 <h1 id="due-dates">Deadline</h1>
