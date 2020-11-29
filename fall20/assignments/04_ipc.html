@@ -159,182 +159,40 @@
                 </p>
 
                 <h1 id="question-2">Question 2</h1>
-                <p>
-                    In <code class="highlighter-rouge">q2</code> directory, there is another C code just like the question 1.
-                    Use <code class="highlighter-rouge gu">pthread</code> library in order to implement a
-                    multi-threaded server instead of multi-process server.
-
+                <p>Cross Memory Attach (CMA) is one of the models for Inter-Process Communication.
+                    The system calls <code class="highlighter-rouge">process_vm_read()</code> and
+                    <code class="highlighter-rouge">process_vm_write()</code> are based on this model.
+                    These two system calls were fully described in the class session.
+                    Assume one of the two following scenarios based on your student number and implement
+                    two C programs to satisfy the desired scenario.
+                    The students with odd student number should consider the first scenario and the others consider second.
                 </p>
 
-                <ul style="list-style-type: disc; color: #3a3a3a">
-                    <li class="">Step 1: Compile and Run the <code class="highlighter-rouge">server.c</code></li>
-                    <li class="">Step 2: In your browser: <a href="http://localhost:8090/" target="_blank">http://localhost:8090/</a></li>
-                    <li class="">Step 3: Include <code class="highlighter-rouge gu">pthread</code> library and add necessary changes to <code class="highlighter-rouge">server.c</code>; Then goto step 1.</li>
-                    <li class="">If you get the error: <code class="highlighter-rouge err">In bind: Address already in use</code> try to change PORT number in the file and then recompile and run.</li>
-
-                </ul>
+                <ol style="color: #3a3a3a">
+                    <li class="">A producer program should produce 3 Gigabytes data. A consumer should read that data and prints out.</li>
+                    <li class="">A producer produces 3 Gigabytes of data and then writes in the consumer's memory space.</li>
+                </ol>
+                <p>
+                    <strong>Note</strong> that to synchronize the producer with the consumer you can use either
+                    <code class="highlighter-rouge">getchar()</code> or <code class="highlighter-rouge">sleep()</code>.
+                    Also, recall <code class="highlighter-rouge">memset()</code> from the class session to generate data.
+                </p>
 
                 <h1 id="question-3">Question 3</h1>
                 <p>
-                    With completion of the question 1 and 2 you should be able to differentiate the multi-process and multi-thread
-                    programming. Write a report and submit it in <b>PDF</b> format, using the questions 1 and 2, try to explain
-                    what is different between these two approach, which are the advantages and disadvantages of each solution.
-                    Also, try to understand how variables look like in memory.
+                    Write a report about the following subjects:
                 </p>
-
-                <h1 id="question-4">Question 4</h1>
-                <h2>Description</h2>
-
-                <p>
-                    Imagine a complex system like an office which has several processing units for doing tasks.
-                    In this office, there is a receptor whose job is queueing input tasks by order of reading
-                    them from the input. Then, a dispatcher should send these tasks to the corresponding unit
-                    of execution. The unit of execution does its own operation on the task, and if there are other
-                    associated units of executions, the task is returned to the waiting queue, otherwise, the task is
-                    done. Following figure illustrates the system structure.
-                </p>
-                <div>
-                    <img src="/fall20/static_files/assignments/HW3/example_diagram_v2.png" alt="Figure">
-                </div>
-
-                <h2>Task Structure</h2>
-
-                <p>
-                    The structure of task should have following information. You are allowed to add other
-                    attributes to it if you find it necessary. Note that the list of operations are <b>stack-like</b>.
-                    It means that the first unit to execute is the first element of its array.
-                </p>
-
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                        <pre class="highlight">
-<code><span class="color-code-key">struct </span><span>task {</span>
-    <span class="color-code-key">int </span><span>id;            </span><span class="color-code-comment">// id of this task</span>
-    <span class="color-code-key">int </span><span>value;         </span><span class="color-code-comment">// value of this task</span>
-    <span class="color-code-key">int </span><span>atime;         </span><span class="color-code-comment">// the arrival time of the task</span>
-    <span class="color-code-key">int </span><span>unit_count;    </span><span class="color-code-comment">// number of units</span>
-    <span class="color-code-key">int </span><span>*unit_id;      </span><span class="color-code-comment">// list of units which task will be assigned to</span>
-<span>}</span></code></pre>
-                    </div>
-                </div>
-
-                <h2>Units and Operations</h2>
-                <p>
-                    Each unit of execution has its own operation which will be done on the value of tasks.
-                    For example, the unit 0 adds 7 to the value of the task then modulates the new number with
-                    <code class="highlighter-rouge">M</code>. <code class="highlighter-rouge">M</code> is a constant
-                    value which should be defined in your program with value of 10000. The reason of using modular
-                    division is to avoid value overflow. Each of these units are implemented as threads. Also, these
-                    units have their own queue which these queues are filled by the dispatcher. The units should
-                    go to sleep for 0.5 second after doing the task.
-                </p>
-
-                <table class="table-border-solid">
-                    <tr>
-                        <th class="table-header table-border-margin">Unit id</th>
-                        <th class="table-header table-border-margin">Operation</th>
-                        <th class="table-header table-border-margin">Desc.</th>
-                    </tr>
-                    <tr>
-                        <td class="table-border-margin">0</td>
-                        <td class="table-border-margin">+7, %M</td>
-                        <td class="table-border-margin">Adds 7 to the value then modulate by M</td>
-                    </tr>
-                    <tr>
-                        <td class="table-border-margin">1</td>
-                        <td class="table-border-margin">*2, %M</td>
-                        <td class="table-border-margin">Multiplies by 2 then modulate by M</td>
-                    </tr>
-                    <tr>
-                        <td class="table-border-margin">2</td>
-                        <td class="table-border-margin">^5, %M</td>
-                        <td class="table-border-margin">Calculates the power 5 and then modulate by M</td>
-                    </tr>
-                    <tr>
-                        <td class="table-border-margin">3</td>
-                        <td class="table-border-margin">-19</td>
-                        <td class="table-border-margin">Subtracts the value from 19</td>
-                    </tr>
-                    <tr>
-                        <td class="table-border-margin">4</td>
-                        <td class="table-border-margin">print</td>
-                        <td class="table-border-margin">Prints out the value of the task</td>
-                    </tr>
-
-                </table> <br><br>
-
-
-                <h2>Input file and Receptor</h2>
-                <p>
-                    The Receptor should read an input file and construct struct of each task, and determine the arrival
-                    of the task, then put that task in the <code class="highlighter-rouge">waiting queue</code>. A
-                    thread-safe structure is required for implementing waiting queue.
-                    The structure of input file is as follows:
-                </p>
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-                <pre class="highlight">
-<code><span>task-id task-value units-count unit-id-1 unit-id-2 ... </span>
-</code></pre>
-                    </div></div>
-                <h3>Example of Input file</h3>
-                <p>Two other examples are also attached.</p>
-
-                        <div class="highlighter-rouge">
-                            <div class="highlight">
-                <pre class="highlight">
-<code><span class="color-code-key">0 123 5 4 0 0 4 2</span>
-<span class="color-code-key">1 78 3 1 2 4</span>
-<span class="color-code-key">2 -3 7 0 1 3 0 2 3 4</span>
-<span class="color-code-key">...</span>
-</code></pre>
-                    </div></div>
-
-                <h2>Print Unit</h2>
-                <p>
-                    The output is generated by the <code class="highlighter-rouge">print</code> unit. The total time of
-                    being in the system until the <code class="highlighter-rouge">print</code> unit should be shown.
-                    The format of out put should look like the following.
-                    **POINT: to label arrival time and the duration of being in the queue you can use
-                    <code class="highlighter-rouge">clock_gettime</code> or
-                    <code class="highlighter-rouge">gettimeofday</code>. (what is difference?
-                    <code class="highlighter-rouge">man</code>)
-                </p>
-
-                <div class="highlighter-rouge">
-                    <div class="highlight">
-
-                <pre class="highlight">
-<code><span class="color-code-key">&lt;time stamp&gt; tid: &lt;task_id&gt; value: &lt;value&gt;</span>
-<span class="color-code-comment">13 tid: 0 value: 123</span>
-<span class="color-code-comment">18 tid: 0 value: 137</span>
-<span class="color-code-comment">...</span>
-</code></pre>
-                    </div></div>
-
-
-                <h2>Final Word!</h2>
-                <p>
-                    On the first impression, this question might seem hard to you, but this is not true.
-                    Please study the assignment carefully and be sure it is not a hard one at all.
-                </p>
-                <p>
-                    Despite ALLOWANCE of copying from each other, we are highly demanding and recommending
-                    that everyone complete this question on <b>his/her own</b>; because there are hundreds of ways to
-                    implement this assignment, and it is not <b>appropriate</b> that all answers look same.
-                </p>
-                <p>
-                    Do not try to waste your time by searching for this assignment on the internet.
-                    We don't believe you could find anything similar!
-                </p>
-
-
+                <ol style="color: #c28182">
+                    <li>The difference between Cross Memory Attach and other models of IPC methods introduced in the class.</li>
+                    <li>The safety of the pipe mechanism.</li>
+                    <li>Is pthread_mutex_lock can be shared among processes instead of threads? Why or why not?</li>
+                </ol>
 
 
                 <h1 id="due-dates">Deadline</h1>
                 <p></p>
                 <ul>
-                    <li><strong>Saturday</strong> 28th Nov. 23:00</li>
+                    <li><strong>Sunday</strong> 6th Dec. 23:00</li>
                 </ul>
 
 
