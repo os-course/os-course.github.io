@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125957901-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-125957901-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Operating Systems: Assignments</title>
+    <meta name="description" content="Operating Systems
+">
+
+    <link rel="stylesheet" href="/fall20/_css/main.css">
+    <link rel="canonical" href="http://os-course.github.io/fall20/assignments/">
+    <link rel="alternate" type="application/rss+xml" title="Iran University of Science and Technology" href="http://os-course.github.io/fall20/feed.xml" />
+    <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.2.4' type='text/css' media='all' />
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="wrapper">
+        <table><tr>
+            <td><img width="250" src="/fall20/_images/dslab_iust.png" valign="middle"></td>
+            <td style="padding-left:10px;"><a style="font-size: 15px;color: #ffffffc7;" class="site-title" href=""></a>
+                <br/>
+                <span style="margin-top: -2px;margin-bottom: -10px;" class="site-title"><b> Operating Systems</b></span>
+                <br/>
+                <span style="color: #000000;font-size: 12px;font-weight: bold;">Fall 2020</span>
+            </td>
+        </tr></table>
+
+        <nav class="site-nav">
+
+            <a href="#" class="menu-icon menu.open">
+                <svg viewBox="0 0 18 15">
+                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                </svg>
+            </a>
+
+            <div class="trigger"><h1>Main Navigation</h1>
+
+                <ul class="menu">
+                    <li><a class="page-link" href="/fall20/"><i class="fa fa-home fa-lg"></i>Home</a></li>
+                    <li><a class="page-link" href="/fall20/schedule/"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a class="page-link" href="/fall20/lectures/"><i class="fas fa-book-reader"></i> Lectures</a></li>
+                    <li><a class="page-link" href="/fall20/assignments/"><i class="fas fa-user-graduate"></i> Assignments</a></li>
+                    <li><a class="page-link" href="/fall20/final_project/"><i class="fas fa-user-graduate"></i>Final Project</a></li>
+                    <li><a class="page-link" href="/fall20/course-materials/"><i class="fas fa-book"></i> Course Materials</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+    </div>
+
+</header>
+
+<div class="page-content">
+    <div class="wrapper">
+        <div class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">#4 Assignment - Inter-Process Communication</h1>
+                <!--                <p class="post-meta">Released on Wednesday 1397/7/4</p>-->
+            </header>
+
+            <div>
+<!--                <a title="Download homework (zip)" href="/fall20/static_files/assignments/HW4.zip">-->
+<!--                    <i class="fas fa-file-archive"> Download</i>-->
+<!--                </a>-->
+            </div>
+
+            <!--            <div>-->
+
+            <!--                <p style="font-weight: bold">Download-->
+
+            <!--                    [<a href="/fall20/static_files/assignments/assignment01.pdf">problems</a>]-->
+
+
+            <!--                    [<a href="/fall20/static_files/assignments/assignment01.zip">attachment</a>]-->
+
+
+            <!--                </p>-->
+
+            <!--                <div style="color: gray;">-->
+            <!--                    <h3>Late Policy</h3>-->
+            <!--                    <ul>-->
+
+            <!--                        <li>You have free 8 late days.</li>-->
+
+            <!--                        <li>You can use late days for assignments. A late day extends the deadline 24 hours.</li>-->
+
+            <!--                        <li>Once you have used all 8 late days, the penalty is 10% for each additional late day.</li>-->
+
+            <!--                    </ul>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <br />
+            <article class="post-content">
+                <h1 id="question-1">Question 1</h1>
+                <p>Write a program in C programming language using IPC primitives (shared memory or pipe) to
+                    satisfy the described following problem:
+                </p>
+
+                <ul style="list-style-type: disc; color: #3a3a3a">
+                    <li class="">The parent process creates eight children processes which are waiting for a data
+                        structure to assign. These processes are called Processing Units (PU).</li>
+                    <li class="">The parent process should generate the first hundred prime numbers,
+                        and store them in a struct which has a value and a counter attribute
+                        (value equals to counter at the beginning), then assign these structures
+                        to children based on the modular division of the prime number by 8. </li>
+                    <li class="">The PUs add their corresponding numbers (0 to 7) to the value and decrement
+                        the counter, and then pass the struct to next PU. This loop continues until the counter is zero.</li>
+                    <li class="">When the counter is zero, the PU passes the struct to the parent and parent prints it out.</li>
+
+                </ul>
+                <p>
+                    An example scenario is illustrated in the following figure.
+                </p>
+
+                <div>
+                    <img src="/fall20/static_files/assignments/HW4/full_ring_example.png" alt="Figure">
+                </div>
+
+                <h1 id="question-2">Question 2</h1>
+                <p>
+                    In <code class="highlighter-rouge">q2</code> directory, there is another C code just like the question 1.
+                    Use <code class="highlighter-rouge gu">pthread</code> library in order to implement a
+                    multi-threaded server instead of multi-process server.
+
+                </p>
+
+                <ul style="list-style-type: disc; color: #3a3a3a">
+                    <li class="">Step 1: Compile and Run the <code class="highlighter-rouge">server.c</code></li>
+                    <li class="">Step 2: In your browser: <a href="http://localhost:8090/" target="_blank">http://localhost:8090/</a></li>
+                    <li class="">Step 3: Include <code class="highlighter-rouge gu">pthread</code> library and add necessary changes to <code class="highlighter-rouge">server.c</code>; Then goto step 1.</li>
+                    <li class="">If you get the error: <code class="highlighter-rouge err">In bind: Address already in use</code> try to change PORT number in the file and then recompile and run.</li>
+
+                </ul>
+
+                <h1 id="question-3">Question 3</h1>
+                <p>
+                    With completion of the question 1 and 2 you should be able to differentiate the multi-process and multi-thread
+                    programming. Write a report and submit it in <b>PDF</b> format, using the questions 1 and 2, try to explain
+                    what is different between these two approach, which are the advantages and disadvantages of each solution.
+                    Also, try to understand how variables look like in memory.
+                </p>
+
+                <h1 id="question-4">Question 4</h1>
+                <h2>Description</h2>
+
+                <p>
+                    Imagine a complex system like an office which has several processing units for doing tasks.
+                    In this office, there is a receptor whose job is queueing input tasks by order of reading
+                    them from the input. Then, a dispatcher should send these tasks to the corresponding unit
+                    of execution. The unit of execution does its own operation on the task, and if there are other
+                    associated units of executions, the task is returned to the waiting queue, otherwise, the task is
+                    done. Following figure illustrates the system structure.
+                </p>
+                <div>
+                    <img src="/fall20/static_files/assignments/HW3/example_diagram_v2.png" alt="Figure">
+                </div>
+
+                <h2>Task Structure</h2>
+
+                <p>
+                    The structure of task should have following information. You are allowed to add other
+                    attributes to it if you find it necessary. Note that the list of operations are <b>stack-like</b>.
+                    It means that the first unit to execute is the first element of its array.
+                </p>
+
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+<code><span class="color-code-key">struct </span><span>task {</span>
+    <span class="color-code-key">int </span><span>id;            </span><span class="color-code-comment">// id of this task</span>
+    <span class="color-code-key">int </span><span>value;         </span><span class="color-code-comment">// value of this task</span>
+    <span class="color-code-key">int </span><span>atime;         </span><span class="color-code-comment">// the arrival time of the task</span>
+    <span class="color-code-key">int </span><span>unit_count;    </span><span class="color-code-comment">// number of units</span>
+    <span class="color-code-key">int </span><span>*unit_id;      </span><span class="color-code-comment">// list of units which task will be assigned to</span>
+<span>}</span></code></pre>
+                    </div>
+                </div>
+
+                <h2>Units and Operations</h2>
+                <p>
+                    Each unit of execution has its own operation which will be done on the value of tasks.
+                    For example, the unit 0 adds 7 to the value of the task then modulates the new number with
+                    <code class="highlighter-rouge">M</code>. <code class="highlighter-rouge">M</code> is a constant
+                    value which should be defined in your program with value of 10000. The reason of using modular
+                    division is to avoid value overflow. Each of these units are implemented as threads. Also, these
+                    units have their own queue which these queues are filled by the dispatcher. The units should
+                    go to sleep for 0.5 second after doing the task.
+                </p>
+
+                <table class="table-border-solid">
+                    <tr>
+                        <th class="table-header table-border-margin">Unit id</th>
+                        <th class="table-header table-border-margin">Operation</th>
+                        <th class="table-header table-border-margin">Desc.</th>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">0</td>
+                        <td class="table-border-margin">+7, %M</td>
+                        <td class="table-border-margin">Adds 7 to the value then modulate by M</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">1</td>
+                        <td class="table-border-margin">*2, %M</td>
+                        <td class="table-border-margin">Multiplies by 2 then modulate by M</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">2</td>
+                        <td class="table-border-margin">^5, %M</td>
+                        <td class="table-border-margin">Calculates the power 5 and then modulate by M</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">3</td>
+                        <td class="table-border-margin">-19</td>
+                        <td class="table-border-margin">Subtracts the value from 19</td>
+                    </tr>
+                    <tr>
+                        <td class="table-border-margin">4</td>
+                        <td class="table-border-margin">print</td>
+                        <td class="table-border-margin">Prints out the value of the task</td>
+                    </tr>
+
+                </table> <br><br>
+
+
+                <h2>Input file and Receptor</h2>
+                <p>
+                    The Receptor should read an input file and construct struct of each task, and determine the arrival
+                    of the task, then put that task in the <code class="highlighter-rouge">waiting queue</code>. A
+                    thread-safe structure is required for implementing waiting queue.
+                    The structure of input file is as follows:
+                </p>
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+                <pre class="highlight">
+<code><span>task-id task-value units-count unit-id-1 unit-id-2 ... </span>
+</code></pre>
+                    </div></div>
+                <h3>Example of Input file</h3>
+                <p>Two other examples are also attached.</p>
+
+                        <div class="highlighter-rouge">
+                            <div class="highlight">
+                <pre class="highlight">
+<code><span class="color-code-key">0 123 5 4 0 0 4 2</span>
+<span class="color-code-key">1 78 3 1 2 4</span>
+<span class="color-code-key">2 -3 7 0 1 3 0 2 3 4</span>
+<span class="color-code-key">...</span>
+</code></pre>
+                    </div></div>
+
+                <h2>Print Unit</h2>
+                <p>
+                    The output is generated by the <code class="highlighter-rouge">print</code> unit. The total time of
+                    being in the system until the <code class="highlighter-rouge">print</code> unit should be shown.
+                    The format of out put should look like the following.
+                    **POINT: to label arrival time and the duration of being in the queue you can use
+                    <code class="highlighter-rouge">clock_gettime</code> or
+                    <code class="highlighter-rouge">gettimeofday</code>. (what is difference?
+                    <code class="highlighter-rouge">man</code>)
+                </p>
+
+                <div class="highlighter-rouge">
+                    <div class="highlight">
+
+                <pre class="highlight">
+<code><span class="color-code-key">&lt;time stamp&gt; tid: &lt;task_id&gt; value: &lt;value&gt;</span>
+<span class="color-code-comment">13 tid: 0 value: 123</span>
+<span class="color-code-comment">18 tid: 0 value: 137</span>
+<span class="color-code-comment">...</span>
+</code></pre>
+                    </div></div>
+
+
+                <h2>Final Word!</h2>
+                <p>
+                    On the first impression, this question might seem hard to you, but this is not true.
+                    Please study the assignment carefully and be sure it is not a hard one at all.
+                </p>
+                <p>
+                    Despite ALLOWANCE of copying from each other, we are highly demanding and recommending
+                    that everyone complete this question on <b>his/her own</b>; because there are hundreds of ways to
+                    implement this assignment, and it is not <b>appropriate</b> that all answers look same.
+                </p>
+                <p>
+                    Do not try to waste your time by searching for this assignment on the internet.
+                    We don't believe you could find anything similar!
+                </p>
+
+
+
+
+                <h1 id="due-dates">Deadline</h1>
+                <p></p>
+                <ul>
+                    <li><strong>Saturday</strong> 28th Nov. 23:00</li>
+                </ul>
+
+
+                <h1 id="submission">Submission</h1>
+                <p>Submit just a zip file ,containing your codes and a report, in LMS. The file should be named as
+                    [<code class="highlighter-rouge">9752xxxx.zip</code>].
+                    For example <code class="highlighter-rouge">97521234.zip</code>.
+
+                </p>
+
+            </article>
+
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <!--     <h2 class="footer-heading">Iran University of Science and Technology</h2> -->
+        <div class="footer-col-wrapper">
+            <div class="footer-col  footer-col-1">
+
+                <ul class="contact-list">
+                    <li><strong>Iran University of Science and Technology</strong></li>
+                    <li></li>
+                    <li><a href=" "> </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-2">
+
+
+                <p class="text">
+                    School of Computer Engineering<br />
+                    Iran University of Science and Technology<br />
+                    Tehran, Iran<br />
+
+            </div>
+
+            <div class="footer-col  footer-col-3">
+                <ul class="social-media-list">
+
+
+
+
+
+                    <!--  <li>
+                        <a href=" ">
+                          <i class="fab fa-twitter" style="color:gray"></i>
+                        </a>
+                      </li>-->
+
+
+
+
+
+
+
+                    <li>
+                        <a href="http://webpages.iust.ac.ir/msharifi//">
+                            <i class="fas fa-globe" style="color:gray"></i> webpages.iust.ac.ir/msharifi/
+                        </a>
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
