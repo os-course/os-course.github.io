@@ -130,6 +130,7 @@
                         and store them in a struct which has a value and a counter attribute
                         (value equals to counter at the beginning), then assign these structures
                         to children based on the modular division of the prime number by 8. </li>
+                    <li class="">These structs are assigned to the PUs one by one, in a concurrent way.</li>
                     <li class="">The PUs add their corresponding numbers (0 to 7) to the value and decrement
                         the counter, and then pass the struct to next PU. This loop continues until the counter is zero.</li>
                     <li class="">When the counter is zero, the PU passes the struct to the parent and parent prints it out.</li>
